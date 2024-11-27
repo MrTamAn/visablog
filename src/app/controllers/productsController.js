@@ -1,9 +1,5 @@
 class ProductsController {
     index(req, res) {
-
-
-
-        
         res.render('product');
     }
 }
