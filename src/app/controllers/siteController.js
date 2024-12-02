@@ -1,11 +1,7 @@
 class SiteController {
-    //GET ==>Sites
-    index(req, res) {
-        res.render('home');
-    }
-    search(req, res) {
-        res.render('search');
-    }
+  index(req, res) {
+    res.render('sitePage/home', { showHeader: true, showFooter: true });
+  }
 }
 
 module.exports = new SiteController();

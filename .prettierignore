@@ -1,0 +1,5 @@
+# Bỏ qua tất cả các file .hbs
+*.hbs
+
+# Hoặc chỉ bỏ qua file .hbs trong một thư mục cụ thể
+views/article/*.hbs

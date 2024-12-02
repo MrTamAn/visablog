@@ -1,13 +1,11 @@
-const newsRoute = require('./newsRoute');
 const siteRoute = require('./siteRoute');
-const usersRoute = require('./usersRoute');
-const productsRoute = require('./productsRoute');
+const articleRoute = require('./articleRoute');
 
 function route(app) {
-    app.use('/', siteRoute);
-    app.use('/news', newsRoute);
-    app.use('/users', usersRoute);
-    app.use('/product', productsRoute);
+  app.use('/', siteRoute);
+
+  //article page
+  app.use('/article', articleRoute);
 }
 
 module.exports = route;

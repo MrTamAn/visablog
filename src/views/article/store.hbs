@@ -1,0 +1,95 @@
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Checkbox - Select All with Express</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .checkbox-group {
+            margin: 10px 0;
+        }
+
+        .submit-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Checkbox Example</h2>
+    <div>
+        <input type='checkbox' id='select-all' />
+        <label for='select-all'>Select All</label>
+    </div>
+
+    <div class='checkbox-group'>
+        <input type='checkbox' id='option-a' class='option' value='A' />
+        <label for='option-a'>Option A</label>
+    </div>
+    <div class='checkbox-group'>
+        <input type='checkbox' id='option-b' class='option' value='B' />
+        <label for='option-b'>Option B</label>
+    </div>
+    <div class='checkbox-group'>
+        <input type='checkbox' id='option-c' class='option' value='C' />
+        <label for='option-c'>Option C</label>
+    </div>
+
+    <button class='submit-button' id='submit-button'>Submit</button>
+
+    <script>
+        const selectAllCheckbox = document.getElementById('select-all');
+        const optionCheckboxes = document.querySelectorAll('.option');
+        const submitButton = document.getElementById('submit-button');
+
+        selectAllCheckbox.addEventListener('change', function () {
+            const isChecked = selectAllCheckbox.checked;
+            optionCheckboxes.forEach(checkbox => {
+                checkbox.checked = isChecked;
+            });
+        });
+
+        optionCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                if (!checkbox.checked) {
+                    selectAllCheckbox.checked = false;
+                } else if ([...optionCheckboxes].every(cb => cb.checked)) {
+                    selectAllCheckbox.checked = true;
+                }
+            });
+        });
+
+        submitButton.addEventListener('click', function () {
+            const selectedOptions = [];
+            optionCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    selectedOptions.push(checkbox.value);
+                }
+            });
+
+            fetch('http://localhost:3000/article/store', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ selectedOptions })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    alert('Data submitted successfully: ' + JSON.stringify(data));
+                })
+                .catch(error => {
+                    alert('Error submitting data: ' + error);
+                });
+        });
+
+    </script>
+</body>
+
+</html>
