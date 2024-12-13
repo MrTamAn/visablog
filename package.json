@@ -1,47 +1,47 @@
 {
-  "name": "visa-blog",
-  "version": "1.0.0",
-  "description": "about visa blog",
-  "main": "src/index.js",
-  "scripts": {
-    "pretty": "lint-staged",
-    "start": "nodemon src/index.js",
-    "sass-watch": "sass  --embed-source-map --watch  src/sass/style.scss src/public/css/style.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^5.1.1",
-    "express": "^4.21.1",
-    "express-handlebars": "^8.0.1",
-    "mongoose": "^8.8.3",
-    "morgan": "^1.10.0",
-    "sass": "^1.81.0"
-  },
-  "devDependencies": {
-    "husky": "^9.1.7",
-    "lint-staged": "^15.2.10",
-    "nodemon": "^3.1.7",
-    "prettier": "^3.4.1"
-  },
-  "prettier": {
-    "printWidth": 80,
-    "tabWidth": 4,
-    "useTabs": false,
-    "singleQuote": true,
-    "trailingComma": "none",
-    "bracketSpacing": true,
-    "arrowParens": "avoid",
-    "jsxBracketSameLine": false,
-    "proseWrap": "preserve"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,css,html,json}": "prettier --write"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
+    "name": "visa-blog",
+    "version": "1.0.0",
+    "description": "about visa blog",
+    "main": "src/index.js",
+    "scripts": {
+        "pretty": "lint-staged",
+        "start": "nodemon src/index.js",
+        "sass-watch": "sass  --embed-source-map --watch  src/sass/style.scss src/public/css/style.css",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "express": "^4.21.1",
+        "express-handlebars": "^8.0.1",
+        "mongoose": "^8.8.3",
+        "morgan": "^1.10.0",
+        "sass": "^1.81.0"
+    },
+    "devDependencies": {
+        "husky": "^9.1.7",
+        "lint-staged": "^15.2.10",
+        "nodemon": "^3.1.7",
+        "prettier": "^3.4.1"
+    },
+    "prettier": {
+        "printWidth": 80,
+        "tabWidth": 4,
+        "useTabs": false,
+        "singleQuote": true,
+        "trailingComma": "none",
+        "bracketSpacing": true,
+        "arrowParens": "avoid",
+        "jsxBracketSameLine": false,
+        "proseWrap": "preserve"
+    },
+    "lint-staged": {
+        "src/**/*.{js,jsx,ts,tsx,css,html,json}": "prettier --write"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
     }
-  }
 }

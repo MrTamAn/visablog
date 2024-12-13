@@ -23,15 +23,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 connectToDb.connectToDb();
 //setup template engine
 app.engine(
-  'hbs',
-  handlebars.engine({
-    extname: '.hbs',
-    helpers: {
-      renderIf: function (condition, options) {
-        return condition ? options.fn(this) : '';
-      }
-    }
-  })
+    'hbs',
+    handlebars.engine({
+        extname: '.hbs',
+        helpers: {
+            renderIf: function (condition, options) {
+                return condition ? options.fn(this) : '';
+            }
+        }
+    })
 );
 app.set('view engine', 'hbs'); // đặt handlebars làm mặc định
 app.set('views', './src/views');
@@ -40,5 +40,5 @@ app.set('views', './src/views');
 route(app);
 
 app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
+    console.log(`App listening on port ${port}`);
 });

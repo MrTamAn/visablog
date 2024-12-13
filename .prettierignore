@@ -1,5 +1,4 @@
 # Bỏ qua tất cả các file .hbs
 *.hbs
-
+node_modules/
 # Hoặc chỉ bỏ qua file .hbs trong một thư mục cụ thể
-views/article/*.hbs

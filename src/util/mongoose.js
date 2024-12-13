@@ -1,5 +1,5 @@
 module.exports = {
-  multipleToObj: function (arrays) {
-    return arrays.map(array => array.toObject());
-  }
+    multipleToObj: function (arrays) {
+        return arrays.map(array => array.toObject());
+    }
 };
